@@ -19,7 +19,7 @@ app.get('/', function(req,res) {
 function browserRefresh(filePath) {
   var html = fs.readFileSync(filePath);
   var $ = cheerio.load(html);
-  $('body').append(`<script src="${process.env.BROWSER_REFRESH_URL}"></script>`);
+  $('body').append('<script src="${process.env.BROWSER_REFRESH_URL}"></script>');
   return $.html();
 }
 
