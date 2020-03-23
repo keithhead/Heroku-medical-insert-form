@@ -19,7 +19,15 @@ var org = nforce.createConnection({
 org.authenticate({ username: 'king.lai@playful-goat-5h00v6.com', password: 'S6tw1515'}, function(err, resp){
   // the oauth object was stored in the connection object
   if(!err) console.log('Cached Token: ' + org.oauth.access_token)
-  if (err) console.log(err);
+});
+
+var acc = nforce.createSObject('Account');
+acc.set('Name', 'Spiffy Cleaners');
+acc.set('Phone', '800-555-2345');
+acc.set('SLA__c', 'Gold');
+
+org.insert({ sobject: acc, oauth: oauth }, function(err, resp){
+  if(!err) console.log('It worked!');
 });
 
 app.post('/update', function(req, res) {
