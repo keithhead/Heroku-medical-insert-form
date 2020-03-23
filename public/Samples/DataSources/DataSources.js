@@ -1,5 +1,4 @@
-function () {
-  $(document).ready(function () {
+$(document).ready(function () {
     tableau.extensions.initializeAsync().then(function () {
 
       // Since dataSource info is attached to the worksheet, we will perform
@@ -121,5 +120,4 @@ function () {
       refreshCell.appendChild(refreshButton);
       infoCell.appendChild(infoSpan);
     }
-  }
-}
+  };
