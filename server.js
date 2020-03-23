@@ -23,7 +23,6 @@ org.authenticate({ username: 'king.lai@playful-goat-5h00v6.com', password: 'S6tw
   var acc = nforce.createSObject('Account');
   acc.set('Name', 'Spiffy Cleaners');
   acc.set('Phone', '800-555-2345');
-  acc.set('SLA__c', 'Gold');
 
   org.insert({ sobject: acc }, function(err, resp){
     if(!err) console.log('It worked!');
