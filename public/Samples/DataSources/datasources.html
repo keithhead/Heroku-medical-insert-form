@@ -107,8 +107,10 @@
     <script>
       $(function() {
         $("#addDataForm").submit(function(event) {
-          
+          event.preventDefault();
+          $("#message").hide();
           var name = Math.random().toString(36).substring(7);
+          
           $.ajax({
               url: event.target.action,
               method: event.target.method,
