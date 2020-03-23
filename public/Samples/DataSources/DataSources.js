@@ -1,7 +1,4 @@
-'use strict';
-
-// Wrap everything in an anonymous function to avoid polluting the global namespace
-(function () {
+function () {
   $(document).ready(function () {
     tableau.extensions.initializeAsync().then(function () {
 
@@ -125,4 +122,4 @@
       infoCell.appendChild(infoSpan);
     }
   }
-})();
+}
