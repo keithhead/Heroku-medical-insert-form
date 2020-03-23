@@ -9,6 +9,13 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 
 var nforce = require('nforce');
+
+// var org = nforce.createConnection({
+//   clientId: 'SOME_OAUTH_CLIENT_ID',
+//   clientSecret: 'SOME_OAUTH_CLIENT_SECRET',
+//   redirectUri: 'http://localhost:3000/oauth/_callback',
+// });
+
 //app.use("/static", express.static('./static/'));
 // app.use('/static', express.static(__dirname + '/Samples/DataSources'));
 
