@@ -76,9 +76,19 @@
           </div>
         </div>
       </div>
-      
     </div>
   </div>
+    
+    <div style="width:100%; height:50px;">
+      <form id="addDataForm" action="/addData" method="post" style="width: auto">
+        <button type="submit" class="btn btn-success">Insert Account Record</button>
+      </form>
+      <div id="message" class="alert alert-info" role="alert" style="display: none;">
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+        <span id="messageMessage"></span>
+      </div>
+    </div>
+    
     </div>
   
       <!-- jQuery -->
@@ -94,5 +104,30 @@
     <!-- Our extension's code -->
     <script src="DataSources.js"></script>
   
+    <script>
+      $(function() {
+        $("#addDataForm").submit(function(event) {
+          
+          var name = Math.random().toString(36).substring(7);
+          $.ajax({
+              url: event.target.action,
+              method: event.target.method,
+              data: JSON.stringify({
+                  name: name
+              }),
+              contentType: "application/json; charset=utf-8",
+              dataType: "json",
+              success: function(data) {
+                  $("#messageMessage").text("Record Inserted!");
+                  $("#message").show();
+              },
+              error: function(err) {
+                  $("#messageMessage").text("Error");
+                  $("#message").show();
+              }
+          })
+        });
+      });
+    </script>
   </body>
 </html>
