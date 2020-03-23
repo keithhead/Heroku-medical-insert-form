@@ -22,7 +22,8 @@ org.authenticate({ username: 'king.lai@playful-goat-5h00v6.com', password: 'S6tw
   // the oauth object was stored in the connection object
   
   if(!err) {
-    console.log('RESP: ' + resp);
+    console.log('RESP: ' + JSON.stringify(resp));
+    
     console.log('Access Token: ' + resp.access_token);
     oauth = resp;
   } else {
