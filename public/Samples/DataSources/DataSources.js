@@ -1,4 +1,8 @@
-$(document).ready(function () {
+'use strict';
+
+// Wrap everything in an anonymous function to avoid polluting the global namespace
+(function () {
+  $(document).ready(function () {
     tableau.extensions.initializeAsync().then(function () {
 
       // Since dataSource info is attached to the worksheet, we will perform
@@ -120,4 +124,5 @@ $(document).ready(function () {
       refreshCell.appendChild(refreshButton);
       infoCell.appendChild(infoSpan);
     }
-  };
+  }
+})();
