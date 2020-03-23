@@ -16,7 +16,7 @@ var org = nforce.createConnection({
   redirectUri: 'https://login.salesforce.com/oauth2/callback',
 });
 
-org.authenticate({ username: 'king.lai@playful-goat-5h00v6.com', password: 'S6tw1515'}, function(err, resp){
+org.authenticate({ username: 'king.lai@playful-goat-5h00v6.com', password: 'S6tw1515', securityToken: 'WmSDOZZzVO2GxapgaOnoqm17' }, function(err, resp){
   // the oauth object was stored in the connection object
   if(!err) console.log('Cached Token: ' + org.oauth.access_token)
   if (err) console.log(err);
