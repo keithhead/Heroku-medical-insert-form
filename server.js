@@ -1,14 +1,14 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var pg = require('pg');
-var nforce = require('nforce');
-
 var app = express();
 
 app.set('port', process.env.PORT || 5000);
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
+
+//var nforce = require('nforce');
 //app.use("/static", express.static('./static/'));
 // app.use('/static', express.static(__dirname + '/Samples/DataSources'));
 
