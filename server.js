@@ -31,14 +31,14 @@ org.authenticate({ username: 'king.lai@playful-goat-5h00v6.com', password: 'S6tw
 });
 
 app.post('/addData', function(req, res) {
-  var acc = nforce.createSObject('Account');
-  acc.set('Name', req.body.name);
-  acc.set('Phone', '800-555-2345');
+    var acc = nforce.createSObject('Account');
+    acc.set('Name', req.body.name);
+    acc.set('Phone', '800-555-2345');
 
-  org.insert({ sobject: acc }, function(err, resp){
-    if(!err) console.log('It worked!');
-    res.json(resp);
-  });
+    org.insert({ sobject: acc, oauth: oauth }, function(err, resp){
+      if(!err) console.log('It worked!');
+      res.json(resp);
+    });
 });
 
 app.listen(app.get('port'), function () {
