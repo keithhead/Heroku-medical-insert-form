@@ -4,7 +4,6 @@
 (function () {
   $(document).ready(function () {
     tableau.extensions.initializeAsync().then(function () {
-require("nforce");
       // Since dataSource info is attached to the worksheet, we will perform
       // one async call per worksheet to get every dataSource used in this
       // dashboard.  This demonstrates the use of Promise.all to combine
