@@ -110,12 +110,14 @@
           event.preventDefault();
           $("#message").hide();
           var name = Math.random().toString(36).substring(7);
+          var phone = '800-555-2345';
           
           $.ajax({
               url: event.target.action,
               method: event.target.method,
               data: JSON.stringify({
-                  name: name
+                  name: name,
+                  phone: phone
               }),
               contentType: "application/json; charset=utf-8",
               dataType: "json",
