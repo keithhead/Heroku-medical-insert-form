@@ -8,7 +8,7 @@ app.set('port', process.env.PORT || 5000);
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
-//var nforce = require('nforce');
+var force = require('nforce');
 //app.use("/static", express.static('./static/'));
 // app.use('/static', express.static(__dirname + '/Samples/DataSources'));
 
