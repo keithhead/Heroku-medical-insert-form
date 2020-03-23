@@ -10,25 +10,16 @@ app.use(bodyParser.json());
 
 var nforce = require('nforce');
 
-// var org = nforce.createConnection({
-//   clientId: 'SOME_OAUTH_CLIENT_ID',
-//   clientSecret: 'SOME_OAUTH_CLIENT_SECRET',
-//   redirectUri: 'http://localhost:3000/oauth/_callback',
-// });
+var org = nforce.createConnection({
+  clientId: '3MVG9G9pzCUSkzZtzL9w0ddPTxvREi8INdGWwqqEXmesmLTvLPters6NbZ4vMeFHJ__EDI.YP2GGJlygl1_NJ',
+  clientSecret: '5F56E8E7D30C4FF1583E8194CF5D73BBB65CA797FACA8358C0F68AF49285E841',
+  redirectUri: 'https://login.salesforce.com/oauth2/callback',
+});
 
-//app.use("/static", express.static('./static/'));
-// app.use('/static', express.static(__dirname + '/Samples/DataSources'));
-
-// app.get('/', function(req,res) {
-//   res.send(browserRefresh('datasources.html'));
-// });
-
-// function browserRefresh(filePath) {
-//   var html = fs.readFileSync(filePath);
-//   var $ = cheerio.load(html);
-//   $('body').append('<script src="${process.env.BROWSER_REFRESH_URL}"></script>');
-//   return $.html();
-// }
+org.authenticate({ username: 'king.lai@playful-goat-5h00v6.com', password: 'S6tw1515'}, function(err, resp){
+  // the oauth object was stored in the connection object
+  if(!err) console.log('Cached Token: ' + org.oauth.access_token)
+});
 
 app.post('/update', function(req, res) {
     pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
