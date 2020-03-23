@@ -8,20 +8,19 @@ app.set('port', process.env.PORT || 5000);
 
 app.use(express.static('public'));
 //app.use("/static", express.static('./static/'));
-
-app.use('/static', express.static(__dirname + '/Samples/DataSources'));
+// app.use('/static', express.static(__dirname + '/Samples/DataSources'));
 app.use(bodyParser.json());
 
-app.get('/', function(req,res) {
-  res.send(browserRefresh('datasources.html'));
-});
+// app.get('/', function(req,res) {
+//   res.send(browserRefresh('datasources.html'));
+// });
 
-function browserRefresh(filePath) {
-  var html = fs.readFileSync(filePath);
-  var $ = cheerio.load(html);
-  $('body').append('<script src="${process.env.BROWSER_REFRESH_URL}"></script>');
-  return $.html();
-}
+// function browserRefresh(filePath) {
+//   var html = fs.readFileSync(filePath);
+//   var $ = cheerio.load(html);
+//   $('body').append('<script src="${process.env.BROWSER_REFRESH_URL}"></script>');
+//   return $.html();
+// }
 
 app.post('/update', function(req, res) {
     pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
