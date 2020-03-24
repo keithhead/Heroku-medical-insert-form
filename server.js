@@ -10,12 +10,12 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 
 var org = nforce.createConnection({
-  clientId: '3MVG9G9pzCUSkzZtzL9w0ddPTxvREi8INdGWwqqEXmesmLTvLPters6NbZ4vMeFHJ__EDI.YP2GGJlygl1_NJ',
-  clientSecret: '5F56E8E7D30C4FF1583E8194CF5D73BBB65CA797FACA8358C0F68AF49285E841',
+  clientId: '3MVG9G9pzCUSkzZs3g2TYsOpgn9hsinhjm2vDfQpI_VVRK3E3V4E.9synPARSsrriKC58K47OyctfhZ60kJAt',
+  clientSecret: 'E11C84E8ADA88C419068838F3E17ACF1E27C31273D3DDAFA168B7A3CB8D9B930',
   redirectUri: 'https://login.salesforce.com/oauth2/callback',
 });
 
-org.authenticate({ username: 'king.lai@playful-goat-5h00v6.com', password: 'S6tw1515', securityToken: 'WmSDOZZzVO2GxapgaOnoqm17' }, function(err, resp){
+org.authenticate({ username: 'keith.ng@k-su19.demo', password: 'salesforce1', securityToken: '27oCbWWf4v5EAwliCXTBsj8Q' }, function(err, resp){
   // the oauth object was stored in the connection object
   if(!err) {
     console.log('RESP: ' + JSON.stringify(resp));
