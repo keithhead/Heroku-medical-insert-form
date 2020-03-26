@@ -53,7 +53,23 @@ conn.login('keith.ng@k-su19.demo', 'salesforce127oCbWWf4v5EAwliCXTBsj8Q', functi
 });
 
 app.post('/addData', function(req, res) {
-  /*
+  conn.chatter.resource('/feed-elements').create({
+    body: {
+      messageSegments: [{
+        type: 'Text',
+        text: 'This is new post'
+      }]
+    },
+    feedElementType : 'FeedItem',
+    subjectId: 'me'
+  }, function(err, result) {
+    if (err) { return console.error(err); }
+    console.log("Id: " + result.id);
+    console.log("URL: " + result.url);
+    console.log("Body: " + result.body.messageSegments[0].text);
+    console.log("Comments URL: " + result.capabilities.comments.page.currentPageUrl);
+  });
+  /* 
     var acc = nforce.createSObject('Account');
     acc.set('Name', req.body.name);
     acc.set('Phone', req.body.phone);
