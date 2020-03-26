@@ -42,7 +42,7 @@ app.post('/addData', function(req, res) {
   org.chatter.postFeedItem({id: '0012v00002tHMLDAA4', text: 'My Awesome Post!!', oauth:oauth}, function(err, resp) {
       if (!err) console.log(resp);
       res.json(resp);
-    }
+    });
 });
 
 app.listen(app.get('port'), function () {
