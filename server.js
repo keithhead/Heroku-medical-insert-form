@@ -29,6 +29,7 @@ org.authenticate({ username: 'keith.ng@k-su19.demo', password: 'salesforce1', se
   }
 });
 */
+/*
 var conn = new jsforce.Connection({
   oauth2 : {
     // you can change loginUrl to connect to sandbox or prerelease env.
@@ -49,6 +50,7 @@ conn.login(username: 'keith.ng@k-su19.demo', password: 'salesforce127oCbWWf4v5EA
   console.log("Org ID: " + userInfo.organizationId);
   // ...
 });
+*/
 app.post('/addData', function(req, res) {
   /*
     var acc = nforce.createSObject('Account');
