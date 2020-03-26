@@ -4,7 +4,7 @@ var pg = require('pg');
 var app = express();
 var nforce = require('nforce');
 var chatter = require('nforce-chatter')(nforce);
-var jsforce = require('jsforce');
+//var jsforce = require('jsforce');
 var oauth;
 
 app.set('port', process.env.PORT || 5000);
