@@ -33,10 +33,17 @@ app.post('/addData', function(req, res) {
     acc.set('Name', req.body.name);
     acc.set('Phone', req.body.phone);
 
+  /*
     org.insert({ sobject: acc, oauth: oauth }, function(err, resp){
       if(!err) console.log('It worked!');
       res.json(resp);
     });
+  */
+  org.chatter.postFeedItem({id: '0052v00000Z1KLrAAN', text: 'My Awesome Post!!'}, function(err, resp) {
+      if (!err) console.log(resp);
+      if (err) console.log(err);
+      res.json(resp);
+    }
 });
 
 app.listen(app.get('port'), function () {
