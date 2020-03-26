@@ -6,8 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Datasources Sample</title>
+    <script src="/static/jsforce.js"></script>
   </head>
   <body>
+    <script>
+      jsforce.browser.init({
+        clientId: '3MVG9G9pzCUSkzZs3g2TYsOpgn9hsinhjm2vDfQpI_VVRK3E3V4E.9synPARSsrriKC58K47OyctfhZ60kJAt',
+        redirectUri: 'https://login.salesforce.com/oauth2/callback',
+        proxyUrl: 'https://tableau-integration-gcr.herokuapp.com/proxy/'
+      });
+      
+      jsforce.browser.on('connect', function(conn) {
+        conn.query('SELECT Id, Name FROM Account', function(err, res) {
+          if (err) { return handleError(err); }
+          handleResult(res);
+        });
+      });
+    </script>
+    
     <div class="container">
       <!-- DataSources Table -->
       <div id="dataSources">
