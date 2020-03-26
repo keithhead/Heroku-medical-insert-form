@@ -16,12 +16,7 @@
         proxyUrl: 'https://tableau-integration-gcr.herokuapp.com/proxy/'
       });
       
-      jsforce.browser.on('connect', function(conn) {
-        conn.query('SELECT Id, Name FROM Account', function(err, res) {
-          if (err) { return handleError(err); }
-          handleResult(res);
-        });
-      });
+      jsforce.browser.login();
     </script>
     
     <div class="container">
