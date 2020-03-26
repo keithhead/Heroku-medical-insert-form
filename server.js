@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var pg = require('pg');
 var app = express();
-var nforce = require('nforce'), chatter = require('nforce-chatter')(nforce),
+var nforce = require('nforce'), chatter = require('nforce-chatter')(nforce);
 var oauth;
 
 app.set('port', process.env.PORT || 5000);
