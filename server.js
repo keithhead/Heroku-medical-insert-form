@@ -39,7 +39,7 @@ app.post('/addData', function(req, res) {
       res.json(resp);
     });
   */
-  org.chatter.postFeedItem({id: '0012v00002tHMLDAA4', text: 'My Awesome Post!!'}, function(err, resp) {
+  org.chatter.postFeedItem({id: '0012v00002tHMLDAA4', text: 'My Awesome Post!!', oauth:oauth}, function(err, resp) {
       if (!err) console.log(resp);
       if (err) console.log(err);
       res.json(resp);
