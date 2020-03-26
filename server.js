@@ -39,6 +39,7 @@ var conn = new jsforce.Connection({
     redirectUri : 'https://login.salesforce.com/oauth2/callback'
   }
 });
+/*
 conn.login(username: 'keith.ng@k-su19.demo', password: 'salesforce127oCbWWf4v5EAwliCXTBsj8Q', function(err, userInfo) {
   if (err) { return console.error(err); }
   // Now you can get the access token and instance URL information.
@@ -50,7 +51,7 @@ conn.login(username: 'keith.ng@k-su19.demo', password: 'salesforce127oCbWWf4v5EA
   console.log("Org ID: " + userInfo.organizationId);
   // ...
 });
-
+*/
 app.post('/addData', function(req, res) {
   /*
     var acc = nforce.createSObject('Account');
