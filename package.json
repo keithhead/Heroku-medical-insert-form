@@ -10,6 +10,7 @@
     "express": "^4.13.1",
     "body-parser": "^1.13.2",
     "nforce": "1.12.2",
+    "nforce-chatter": "0.0.1", 
     "pg": "^4.4.0"
   },
   "engines": {
